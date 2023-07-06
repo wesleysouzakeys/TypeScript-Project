@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
     <title>Wesley</title>
 </head>
+
 <body>
+
+    <section class="formulario">
+        <form onSubmit={aoSalvar}>
+            <h2>Preencha os dados para criar o card do colaborador</h2>
+            <div class="campo-texto">
+                <label>Nome</label>
+                <input onChange={aoDigitado} required={props.obrigatorio} />
+            </div>
+            <div class="campo-texto">
+                <label>Cargo</label>
+                <input onChange={aoDigitado} required={props.obrigatorio} />
+            </div>
+            <div class="campo-texto">
+                <label>Imagem</label>
+                <input onChange={aoDigitado} required={props.obrigatorio} />
+            </div>
+            <div class="lista-suspensa">
+                <label>Time</label>
+                <select>
+                    <option value=""></option>
+                    <option value="">Programação</option>
+                    <option value="">Front-End</option>
+                    <option value="">Data Science</option>
+                    <option value="">Devops</option>
+                    <option value="">UX e Design</option>
+                    <option value="">Mobile</option>
+                    <option value="">Inovação e Gestão</option>
+                </select>
+            </div>
+            <button class="botao">
+                Criar Card
+            </button>
+        </form>
+    </section>
+    <section class='time'>
+        <h3>Desenvolvedor</h3>
+        <div class='colaboradores'>
+            <div class='colaborador'>
+                <div class='cabecalho'>
+                    <img src="https://github.com/wesleysouzakeys.png" alt=Wesley />
+                </div>
+                <div class='rodape'>
+                    <h4>Wesley</h4>
+                    <h5>Desenvolvedor</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script type="module" src="./dist/js/script.js"></script>
 </body>
+
 </html>
