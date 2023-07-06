@@ -1,0 +1,21 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run watch\" \"npm run lite\"",
+    "lite": "lite-server",
+    "compile": "tsc",
+    "watch": "tsc -w"
+  },
+  "keywords": [],
+  "author": "Wesley",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "lite-server": "^2.6.1",
+    "typescript": "^5.1.6"
+  }
+}
