@@ -1,10 +1,12 @@
-import { Pessoa } from "../components/Pessoa.js";
+import { Pessoa } from "../Models/Pessoa.js";
+import { Times } from "../Models/Times.js";
 
 export class PessoaController {
-    name: HTMLInputElement
-    role: HTMLInputElement
-    image: HTMLInputElement
-    team: HTMLSelectElement
+    private name: HTMLInputElement
+    private role: HTMLInputElement
+    private image: HTMLInputElement
+    private team: HTMLSelectElement
+    private times = new Times();
 
     constructor() {
         this.name = document.querySelector("#name")
@@ -21,9 +23,14 @@ export class PessoaController {
             this.team.options[this.team.selectedIndex].text
         )
 
-        pessoa.mostra()
+        this.adicionaAoTime(pessoa)
 
         this.limpaSelecao()
+    }
+
+    adicionaAoTime(pessoa: Pessoa): void {
+        this.times.adiciona(pessoa)
+        console.log(this.times.lista())
     }
 
     limpaSelecao(): void {
