@@ -5,7 +5,8 @@
         // target: qual versão do ECMAScript será os arquivos .ts serão convertidos 
         "target": "ES6",
         // noEmitOnError: Não gerará arquivos JavaScript enquanto os TypeScripts não compilar sem erros 
-        "noEmitOnError": true
+        "noEmitOnError": true,
+        "noImplicitAny": true
     },
     // Onde estão os arquivos TypeScript a serem compilados
     "include": ["app/**/*"]

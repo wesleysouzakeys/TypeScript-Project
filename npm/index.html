@@ -11,23 +11,23 @@
 <body>
 
     <section class="formulario">
-        <form onSubmit={aoSalvar}>
+        <form class="form">
             <h2>Preencha os dados para criar o card do colaborador</h2>
             <div class="campo-texto">
                 <label>Nome</label>
-                <input onChange={aoDigitado} required={props.obrigatorio} />
+                <input id="name" />
             </div>
             <div class="campo-texto">
                 <label>Cargo</label>
-                <input onChange={aoDigitado} required={props.obrigatorio} />
+                <input id="role" />
             </div>
             <div class="campo-texto">
                 <label>Imagem</label>
-                <input onChange={aoDigitado} required={props.obrigatorio} />
+                <input id="image" />
             </div>
             <div class="lista-suspensa">
                 <label>Time</label>
-                <select>
+                <select id="team">
                     <option value=""></option>
                     <option value="">Programação</option>
                     <option value="">Front-End</option>
@@ -58,7 +58,7 @@
         </div>
     </section>
 
-    <script type="module" src="./dist/js/script.js"></script>
+    <script type="module" src="./dist/js/app.js"></script>
 </body>
 
 </html>
