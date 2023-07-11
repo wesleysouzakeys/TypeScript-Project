@@ -1,26 +1,20 @@
 export class TimesView {
-
-    private elemento:HTMLElement;
-
-    constructor(seletor: string) {
-        this.elemento = document.querySelector(seletor)
+    constructor(seletor) {
+        this.elemento = document.querySelector(seletor);
     }
-
-    template(tituloTime: string, corPrimaria: string, corSecundaria: string): string {
+    template(tituloTime, corPrimaria, corSecundaria) {
         return `
         <section class='time' style='background-color: ${corSecundaria}'>
             <h3 style='border-color: ${corPrimaria};'>${tituloTime}</h3>
             <div class='colaboradores' onLoad="">
                 
             </div>
-        </section> `
+        </section> `;
     }
-
-    update(): void {
-        times.forEach(i => {this.elemento.insertAdjacentHTML('afterbegin', this.template(i.nome, i.corPrimaria, i.corSecundaria))})
+    update() {
+        times.forEach(i => { this.elemento.insertAdjacentHTML('afterbegin', this.template(i.nome, i.corPrimaria, i.corSecundaria)); });
     }
 }
-
 const times = [
     {
         nome: 'Programação',
@@ -57,4 +51,4 @@ const times = [
         corPrimaria: '#FF8A29',
         corSecundaria: '#FFEEDF'
     }
-]
+];

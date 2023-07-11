@@ -1,5 +1,6 @@
 import { Pessoa } from "../Models/Pessoa.js";
-import { Times } from "../Models/Times.js";
+import { Pessoas } from "../Models/Pessoas.js";
+import { PessoasView } from "../Views/pessoas-view.js";
 import { TimesView } from "../Views/times-view.js";
 
 export class PessoaController {
@@ -7,8 +8,9 @@ export class PessoaController {
     private role: HTMLInputElement
     private image: HTMLInputElement
     private team: HTMLSelectElement
-    private times = new Times();
-    private timesView = new TimesView('#colaboradores')
+    private pessoas = new Pessoas();
+    private timesView = new TimesView('.times');
+    private pessoasView = new PessoasView('.colaboradores')
 
     constructor() {
         this.name = document.querySelector("#name")
@@ -32,8 +34,7 @@ export class PessoaController {
     }
 
     adicionaAoTime(pessoa: Pessoa): void {
-        this.times.adiciona(pessoa)
-        console.log(this.times.lista())
+        this.pessoas.adiciona(pessoa)
     }
 
     limpaSelecao(): void {
