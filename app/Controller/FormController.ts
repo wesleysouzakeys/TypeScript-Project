@@ -12,6 +12,7 @@ export class PessoaController {
     private timesView = new TimesView('.times');
     private pessoasView = new PessoasView('.colaboradores')
 
+
     constructor() {
         this.name = document.querySelector("#name")
         this.role = document.querySelector('#role')
@@ -28,13 +29,10 @@ export class PessoaController {
             this.team.options[this.team.selectedIndex].text
         )
 
-        this.adicionaAoTime(pessoa)
+        this.pessoas.adiciona(pessoa)
+        this.pessoasView.update(this.pessoas.lista());
 
         this.limpaSelecao()
-    }
-
-    adicionaAoTime(pessoa: Pessoa): void {
-        this.pessoas.adiciona(pessoa)
     }
 
     limpaSelecao(): void {

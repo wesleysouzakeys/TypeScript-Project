@@ -1,11 +1,8 @@
-import { Pessoas } from "../Models/Pessoas.js";
 export class PessoasView {
     constructor(seletor) {
         setTimeout(() => {
             this.elemento = document.querySelector(seletor);
-        });
-        this.pessoas = new Pessoas().pessoas;
-        console.log(this.pessoas);
+        }, 1000);
     }
     template(pessoa) {
         return `
@@ -19,9 +16,7 @@ export class PessoasView {
             </div>
         </div>`;
     }
-    update() {
-        // console.log(this.elemento)
-        this.pessoas.forEach(i => { this.elemento.insertAdjacentHTML('afterbegin', this.template(i)); });
-        // console.log(this.pessoas)
+    update(pessoas) {
+        pessoas.forEach(i => { this.elemento.insertAdjacentHTML('beforeend', this.template(i)); });
     }
 }

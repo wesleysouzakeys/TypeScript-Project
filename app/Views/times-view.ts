@@ -8,7 +8,7 @@ export class TimesView {
 
     template(tituloTime: string, corPrimaria: string, corSecundaria: string): string {
         return `
-        <section class='time' style='background-color: ${corSecundaria}'>
+        <section class='time' key='${tituloTime}' style='background-color: ${corSecundaria}'>
             <h3 style='border-color: ${corPrimaria};'>${tituloTime}</h3>
             <div class='colaboradores' onLoad="">
                 
@@ -17,7 +17,7 @@ export class TimesView {
     }
 
     update(): void {
-        times.forEach(i => {this.elemento.insertAdjacentHTML('afterbegin', this.template(i.nome, i.corPrimaria, i.corSecundaria))})
+        times.forEach(i => {this.elemento.insertAdjacentHTML('beforeend', this.template(i.nome, i.corPrimaria, i.corSecundaria))})
     }
 }
 
