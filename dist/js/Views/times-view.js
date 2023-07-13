@@ -6,7 +6,7 @@ export class TimesView {
         return `
         <section class='time' key='${tituloTime}' style='background-color: ${corSecundaria}'>
             <h3 style='border-color: ${corPrimaria};'>${tituloTime}</h3>
-            <div class='colaboradores' onLoad="">
+            <div class='colaboradores'>
                 
             </div>
         </section> `;

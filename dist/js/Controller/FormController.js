@@ -16,7 +16,7 @@ export class PessoaController {
     criaPessoa() {
         const pessoa = new Pessoa(this.name.value, this.role.value, this.image.value, this.team.options[this.team.selectedIndex].text);
         this.pessoas.adiciona(pessoa);
-        this.pessoasView.update(this.pessoas.lista());
+        this.pessoasView.update(pessoa);
         this.limpaSelecao();
     }
     limpaSelecao() {

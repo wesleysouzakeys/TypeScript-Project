@@ -30,7 +30,7 @@ export class PessoaController {
         )
 
         this.pessoas.adiciona(pessoa)
-        this.pessoasView.update(this.pessoas.lista());
+        this.pessoasView.update(pessoa)
 
         this.limpaSelecao()
     }

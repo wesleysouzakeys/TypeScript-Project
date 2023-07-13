@@ -7,11 +7,8 @@ export class Pessoas {
         // new Pessoa("Thiago", "Front", "https://github.com/Thiago-Nascimento.png", "Front-End")
     ];
 
-    adiciona(pessoa: Pessoa) {
+    adiciona(pessoa: Pessoa): Pessoa {
         this.pessoas.push(pessoa)
-    }
-
-    lista(): Pessoa[] {
-        return this.pessoas
+        return pessoa
     }
 }

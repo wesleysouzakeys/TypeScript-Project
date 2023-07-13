@@ -7,8 +7,6 @@ export class Pessoas {
     }
     adiciona(pessoa) {
         this.pessoas.push(pessoa);
-    }
-    lista() {
-        return this.pessoas;
+        return pessoa;
     }
 }
