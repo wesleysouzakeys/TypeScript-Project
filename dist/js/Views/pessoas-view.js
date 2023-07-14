@@ -10,7 +10,7 @@ export class PessoasView {
         return `
         <div class='colaborador'>
             <div class='cabecalho' style="background-color: ${corPrimaria}">
-                <img src=${pessoa.image} alt={nome}/>
+                <img src="https://github.com/${pessoa.image}.png" alt={nome}/>
             </div>
             <div class='rodape'>
                 <h4>${pessoa.name}</h4>
