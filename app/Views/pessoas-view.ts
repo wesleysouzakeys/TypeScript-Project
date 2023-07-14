@@ -25,8 +25,6 @@ export class PessoasView {
         </div>`
     }
 
-    
-
     update(pessoa: Pessoa): void {
 
         const tags = document.getElementsByClassName("colaboradores")
@@ -36,7 +34,7 @@ export class PessoasView {
         const found = tagArray.find(element => element.getAttribute("key") === `${pessoa.team}`)
         const team = times.find(team => team.nome === found.getAttribute("key"))
 
-        found.insertAdjacentHTML('beforeend', this.template(pessoa, team.corPrimaria)) 
+        found.insertAdjacentHTML('beforeend', this.template(pessoa, team.corPrimaria))
     }
 }
 

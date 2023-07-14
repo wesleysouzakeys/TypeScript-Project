@@ -1,6 +1,6 @@
 export class TimesView {
 
-    public elemento:HTMLElement;
+    public elemento: HTMLElement;
 
     constructor(seletor: string) {
         this.elemento = document.querySelector(seletor)
@@ -17,7 +17,7 @@ export class TimesView {
     }
 
     update(): void {
-        times.forEach(i => {this.elemento.insertAdjacentHTML('beforeend', this.template(i.nome, i.corPrimaria, i.corSecundaria))})
+        times.forEach(i => { this.elemento.insertAdjacentHTML('beforeend', this.template(i.nome, i.corPrimaria, i.corSecundaria)) })
     }
 }
 
