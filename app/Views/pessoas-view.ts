@@ -12,10 +12,10 @@ export class PessoasView {
         }, 1000)
     }
 
-    template(pessoa: Pessoa): string {
+    template(pessoa: Pessoa, corPrimaria: string): string {
         return `
         <div class='colaborador'>
-            <div class='cabecalho' style="">
+            <div class='cabecalho' style="background-color: ${corPrimaria}">
                 <img src=${pessoa.image} alt={nome}/>
             </div>
             <div class='rodape'>
@@ -25,25 +25,18 @@ export class PessoasView {
         </div>`
     }
 
+    
+
     update(pessoa: Pessoa): void {
 
-        // To Do: Transformar this.timesSection.elemento em Array e varrer para inputar a última pessoa cadastrada no time correto 
+        const tags = document.getElementsByClassName("colaboradores")
 
-        console.log(this.timesSection.elemento)
-
-        const tags = document.getElementsByTagName('div');
-
-        // Convert the HTMLCollection to an array for easier iteration
         const tagArray = Array.from(tags);
 
-        // Iterate over the array of tags
-        tagArray.forEach((tag: HTMLElement) => {
-            // Perform actions on each tag
-            console.log(tag.innerHTML);
-        });
+        const found = tagArray.find(element => element.getAttribute("key") === `${pessoa.team}`)
+        const team = times.find(team => team.nome === found.getAttribute("key"))
 
-        // insertAdjacentHTML('beforeend', this.template()) 
-
+        found.insertAdjacentHTML('beforeend', this.template(pessoa, team.corPrimaria)) 
     }
 }
 

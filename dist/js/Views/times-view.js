@@ -4,9 +4,9 @@ export class TimesView {
     }
     template(tituloTime, corPrimaria, corSecundaria) {
         return `
-        <section class='time' key='${tituloTime}' style='background-color: ${corSecundaria}'>
+        <section class='time' style='background-color: ${corSecundaria}'>
             <h3 style='border-color: ${corPrimaria};'>${tituloTime}</h3>
-            <div class='colaboradores'>
+            <div class='colaboradores' key='${tituloTime}'>
                 
             </div>
         </section> `;

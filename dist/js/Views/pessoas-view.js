@@ -6,10 +6,10 @@ export class PessoasView {
             this.elemento = document.querySelector(seletor);
         }, 1000);
     }
-    template(pessoa) {
+    template(pessoa, corPrimaria) {
         return `
         <div class='colaborador'>
-            <div class='cabecalho' style="">
+            <div class='cabecalho' style="background-color: ${corPrimaria}">
                 <img src=${pessoa.image} alt={nome}/>
             </div>
             <div class='rodape'>
@@ -19,16 +19,11 @@ export class PessoasView {
         </div>`;
     }
     update(pessoa) {
-        console.log(this.timesSection.elemento);
-        const tags = document.getElementsByTagName('div');
-        // Convert the HTMLCollection to an array for easier iteration
+        const tags = document.getElementsByClassName("colaboradores");
         const tagArray = Array.from(tags);
-        // Iterate over the array of tags
-        tagArray.forEach((tag) => {
-            // Perform actions on each tag
-            console.log(tag.innerHTML);
-        });
-        // insertAdjacentHTML('beforeend', this.template()) 
+        const found = tagArray.find(element => element.getAttribute("key") === `${pessoa.team}`);
+        const team = times.find(team => team.nome === found.getAttribute("key"));
+        found.insertAdjacentHTML('beforeend', this.template(pessoa, team.corPrimaria));
     }
 }
 const times = [
