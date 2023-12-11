@@ -1,22 +1,21 @@
-import { Pessoa } from "../Models/Pessoa.js";
-import { Pessoas } from "../Models/Pessoas.js";
-import { PessoasView } from "../Views/pessoas-view.js";
-import { TimesView } from "../Views/times-view.js";
+import { Pessoa } from '../Models/Pessoa.js';
+import { Pessoas } from '../Models/Pessoas.js';
+import { PessoasView } from '../Views/pessoas-view.js';
+import { TimesView } from '../Views/times-view.js';
 
 export class PessoaController {
-    private name: HTMLInputElement
-    private role: HTMLInputElement
-    private image: HTMLInputElement
-    private team: HTMLSelectElement
+    private name: HTMLInputElement;
+    private role: HTMLInputElement;
+    private image: HTMLInputElement;
+    private team: HTMLSelectElement;
     private pessoas = new Pessoas();
     private timesView = new TimesView('.times');
-    private pessoasView = new PessoasView('.colaboradores')
-
+    private pessoasView = new PessoasView('.colaboradores');
 
     constructor() {
-        this.name = document.querySelector("#name")
-        this.role = document.querySelector('#role')
-        this.image = document.querySelector('#image')
+        this.name = document.querySelector('#name');
+        this.role = document.querySelector('#role');
+        this.image = document.querySelector('#image');
         this.team = document.querySelector('#team');
         this.timesView.update();
     }
@@ -27,18 +26,18 @@ export class PessoaController {
             this.role.value,
             this.image.value,
             this.team.options[this.team.selectedIndex].text
-        )
+        );
 
-        this.pessoas.adiciona(pessoa)
-        this.pessoasView.update(pessoa)
+        this.pessoas.adiciona(pessoa);
+        this.pessoasView.update(pessoa);
 
-        this.limpaSelecao()
+        this.limpaSelecao();
     }
 
     limpaSelecao(): void {
-        this.name.value = ''
-        this.role.value = ''
-        this.image.value = ''
-        this.team.selectedIndex = 0
+        this.name.value = '';
+        this.role.value = '';
+        this.image.value = '';
+        this.team.selectedIndex = 0;
     }
 }

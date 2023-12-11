@@ -1,4 +1,4 @@
-import { TimesView } from "./times-view.js";
+import { TimesView } from './times-view.js';
 export class PessoasView {
     constructor(seletor) {
         this.timesSection = new TimesView('.times');
@@ -19,10 +19,10 @@ export class PessoasView {
         </div>`;
     }
     update(pessoa) {
-        const tags = document.getElementsByClassName("colaboradores");
+        const tags = document.getElementsByClassName('colaboradores');
         const tagArray = Array.from(tags);
-        const found = tagArray.find(element => element.getAttribute("key") === `${pessoa.team}`);
-        const team = times.find(team => team.nome === found.getAttribute("key"));
+        const found = tagArray.find((element) => element.getAttribute('key') === `${pessoa.team}`);
+        const team = times.find((team) => team.nome === found.getAttribute('key'));
         found.insertAdjacentHTML('beforeend', this.template(pessoa, team.corPrimaria));
     }
 }

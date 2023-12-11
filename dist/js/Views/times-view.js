@@ -7,12 +7,14 @@ export class TimesView {
         <section class='time' style='background-color: ${corSecundaria}'>
             <h3 style='border-color: ${corPrimaria};'>${tituloTime}</h3>
             <div class='colaboradores' key='${tituloTime}'>
-                
+
             </div>
         </section> `;
     }
     update() {
-        times.forEach(i => { this.elemento.insertAdjacentHTML('beforeend', this.template(i.nome, i.corPrimaria, i.corSecundaria)); });
+        times.forEach((i) => {
+            this.elemento.insertAdjacentHTML('beforeend', this.template(i.nome, i.corPrimaria, i.corSecundaria));
+        });
     }
 }
 const times = [

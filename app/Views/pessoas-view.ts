@@ -1,15 +1,14 @@
-import { Pessoa } from "../Models/Pessoa.js";
-import { TimesView } from "./times-view.js";
+import { Pessoa } from '../Models/Pessoa.js';
+import { TimesView } from './times-view.js';
 
 export class PessoasView {
-
     private elemento: HTMLElement;
-    private timesSection = new TimesView('.times')
+    private timesSection = new TimesView('.times');
 
     constructor(seletor: string) {
         setTimeout(() => {
-            this.elemento = document.querySelector(seletor)
-        }, 1000)
+            this.elemento = document.querySelector(seletor);
+        }, 1000);
     }
 
     template(pessoa: Pessoa, corPrimaria: string): string {
@@ -22,19 +21,18 @@ export class PessoasView {
                 <h4>${pessoa.name}</h4>
                 <h5>${pessoa.role}</h5>
             </div>
-        </div>`
+        </div>`;
     }
 
     update(pessoa: Pessoa): void {
-
-        const tags = document.getElementsByClassName("colaboradores")
+        const tags = document.getElementsByClassName('colaboradores');
 
         const tagArray = Array.from(tags);
 
-        const found = tagArray.find(element => element.getAttribute("key") === `${pessoa.team}`)
-        const team = times.find(team => team.nome === found.getAttribute("key"))
+        const found = tagArray.find((element) => element.getAttribute('key') === `${pessoa.team}`);
+        const team = times.find((team) => team.nome === found.getAttribute('key'));
 
-        found.insertAdjacentHTML('beforeend', this.template(pessoa, team.corPrimaria))
+        found.insertAdjacentHTML('beforeend', this.template(pessoa, team.corPrimaria));
     }
 }
 
@@ -74,4 +72,4 @@ const times = [
         corPrimaria: '#FF8A29',
         corSecundaria: '#FFEEDF'
     }
-]
+];

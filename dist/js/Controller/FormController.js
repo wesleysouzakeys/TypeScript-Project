@@ -1,13 +1,13 @@
-import { Pessoa } from "../Models/Pessoa.js";
-import { Pessoas } from "../Models/Pessoas.js";
-import { PessoasView } from "../Views/pessoas-view.js";
-import { TimesView } from "../Views/times-view.js";
+import { Pessoa } from '../Models/Pessoa.js';
+import { Pessoas } from '../Models/Pessoas.js';
+import { PessoasView } from '../Views/pessoas-view.js';
+import { TimesView } from '../Views/times-view.js';
 export class PessoaController {
     constructor() {
         this.pessoas = new Pessoas();
         this.timesView = new TimesView('.times');
         this.pessoasView = new PessoasView('.colaboradores');
-        this.name = document.querySelector("#name");
+        this.name = document.querySelector('#name');
         this.role = document.querySelector('#role');
         this.image = document.querySelector('#image');
         this.team = document.querySelector('#team');

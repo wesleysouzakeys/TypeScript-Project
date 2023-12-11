@@ -1,9 +1,8 @@
 export class TimesView {
-
     public elemento: HTMLElement;
 
     constructor(seletor: string) {
-        this.elemento = document.querySelector(seletor)
+        this.elemento = document.querySelector(seletor);
     }
 
     template(tituloTime: string, corPrimaria: string, corSecundaria: string): string {
@@ -11,13 +10,18 @@ export class TimesView {
         <section class='time' style='background-color: ${corSecundaria}'>
             <h3 style='border-color: ${corPrimaria};'>${tituloTime}</h3>
             <div class='colaboradores' key='${tituloTime}'>
-                
+
             </div>
-        </section> `
+        </section> `;
     }
 
     update(): void {
-        times.forEach(i => { this.elemento.insertAdjacentHTML('beforeend', this.template(i.nome, i.corPrimaria, i.corSecundaria)) })
+        times.forEach((i) => {
+            this.elemento.insertAdjacentHTML(
+                'beforeend',
+                this.template(i.nome, i.corPrimaria, i.corSecundaria)
+            );
+        });
     }
 }
 
@@ -57,4 +61,4 @@ const times = [
         corPrimaria: '#FF8A29',
         corSecundaria: '#FFEEDF'
     }
-]
+];
